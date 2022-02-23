@@ -3,7 +3,7 @@
 @section('content')
 <div class="card" >
     <div class="card-header">
-        <h4>Add Category</h4>
+        <h3>Add Category</h3>
     </div>
     <div class="card-body" >
         @if ($errors->any())

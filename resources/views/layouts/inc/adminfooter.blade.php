@@ -44,6 +44,11 @@
     swal("{{session('status')}}"," ","success");
   </script>
 @endif
+@if(session('home'))
+  <script>
+    swal("{{session('home')}}");
+  </script>
+@endif
 
 </body>
 

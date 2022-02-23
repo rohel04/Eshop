@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-header" >
-        <H3> Category Page</H3>       
+        <H3> Products Page</H3>       
     </div>
     <div class="card-body">
         <table class="table" style="color: #232222;font-size:15px">
@@ -20,13 +20,13 @@
            @php
             $i=0;   
            @endphp
-                @foreach ($category as $item)
+                @foreach ($products as $item)
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;{{++$i}}</td>
                     <td>{{$item->name}}</td>
                     <td>{{$item->description}}</td>
                     <td>
-                        <img src="{{asset('assets/uploads/category/'.$item->image)}}" alt="No img" width="80" height="90">
+                        <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="No img" width="80" height="90">
                     </td>
                     <td>
                         <a href="{{url('edit-category/'.$item->id)}}" class="btn btn-info btn-sm">Edit</a>

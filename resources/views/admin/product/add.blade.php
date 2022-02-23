@@ -3,7 +3,7 @@
 @section('content')
 <div class="card" >
     <div class="card-header">
-        <h3>Add Category</h3>
+        <h3>Add Product</h3>
     </div>
     <div class="card-body" >
         @if ($errors->any())
@@ -15,9 +15,18 @@
         </ul>
         </div>
         @endif
-        <form action="{{url('insert-category')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{url('insert-products')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
+                <div class="col-md-12 mb-3">
+                    <select class="form-select" name="cate_id" style="padding: 2px">
+                        <option value="">Select a Category:</option>
+                        @foreach($category as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                        @endforeach
+                        
+                      </select>
+                </div>
                 <div class="col-md-6 mb-3">
                     <label for="">Name</label>
                     <input type="text"  name="name" class="form-control" value="{{old('name')}}" style="background-color: #E3E3E3;padding:5px">
@@ -27,16 +36,36 @@
                     <input type="text" class="form-control" name="slug" value="{{old('slug')}}" style="background-color: #E3E3E3;padding:5px">
                 </div><!--col-->
                 <div class="col-md-12 mb-3">
+                    <label for="">Small Description</label>
+                    <textarea name="small_description" rows="3" class="form-control" style="background-color: #E3E3E3;padding:5px">{{old('description')}}</textarea>
+                </div><!--col-->
+                <div class="col-md-12 mb-3">
                     <label for="">Description</label>
                     <textarea name="description" rows="3" class="form-control" style="background-color: #E3E3E3;padding:5px">{{old('description')}}</textarea>
                 </div><!--col-->
                 <div class="col-md-6 mb-3">
-                    <label for="">Status</label>
-                    <input type="checkbox" name="status" style="background-color: #E3E3E3;padding:5px">
+                    <label for="">Oiginal Price:</label>
+                    <input type="number" name="original_price" class="form-control" style="background-color: #E3E3E3;padding:5px">
                 </div><!--col-->
                 <div class="col-md-6 mb-3">
-                    <label for="">Popular</label>
-                    <input type="checkbox" name="popular" style="background-color: #E3E3E3;padding:5px">
+                    <label for="">Selling Price:</label>
+                    <input type="number" name="selling_price" class="form-control" style="background-color: #E3E3E3;padding:5px">
+                </div><!--col-->
+                <div class="col-md-6 mb-3">
+                    <label for="">Tax</label>
+                    <input type="number" name="tax" class="form-control" style="background-color: #E3E3E3;padding:5px">
+                </div><!--col-->
+                <div class="col-md-6 mb-3">
+                    <label for="">Quantity</label>
+                    <input type="number" name="quantity" class="form-control" style="background-color: #E3E3E3;padding:5px">
+                </div><!--col-->
+                <div class="col-md-6 mb-3">
+                    <label for="">Status</label>
+                    <input type="checkbox" name="status"  style="background-color: #E3E3E3;padding:5px">
+                </div><!--col-->
+                <div class="col-md-6 mb-3">
+                    <label for="">Trending:</label>
+                    <input type="checkbox" name="trending"  style="background-color: #E3E3E3;padding:5px">
                 </div><!--col-->
                 <div class="col-md-12 mb-3">
                     <label for="">Meta Title</label>

@@ -33,6 +33,22 @@
             <span class="nav-link-text ms-1">Add Category</span>
           </a>
         </li>      
+        <li class="nav-item ">
+          <a class="nav-link text-white {{Request::is('products')?'active bg-gradient-info':''}} " href="{{url('products')}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="fa fa-product-hunt"></i>
+            </div>
+            <span class="nav-link-text ms-1">Products</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white {{Request::is('add-products')?'active bg-gradient-info':''}} " href="{{url('add-products')}}">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="fa fa-product-hunt opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Add Products</span>
+          </a>
+        </li>     
         
       </ul>
     </div>
