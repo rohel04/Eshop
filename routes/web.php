@@ -40,6 +40,9 @@ Route::group(['middleware' => ['auth','isAdmin']], function () {
     Route::get('products',[ProductController::class,'index']);
     Route::get('add-products',[ProductController::class,'add']);
     Route::post('insert-products',[ProductController::class,'insert']);
+    Route::get('edit-products/{id}',[ProductController::class,'edit']);
+    Route::put('update-products/{id}',[ProductController::class,'update']);
+    Route::get('delete-products/{id}',[ProductController::class,'destroy']);
 
  
  });
