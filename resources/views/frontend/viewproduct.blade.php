@@ -45,15 +45,22 @@
                         </div>
                         <div class="col-md-10">
                             <br>
-                            <button type="button" class="btn btn-success me-3 float-start">Add to wishlist</button>
-                            <button type="button" class="btn btn-primary me-3 float-start">Add to cart</button>
+                            <button type="button" class="btn btn-success me-3 float-start">Add to wishlist <i class="fa fa-heart"></i></button>
+                            <button type="button" class="btn btn-primary me-3 float-start">Add to cart <i class="fa fa-shopping-cart"></i></button>
 
                         </div>
                         
                     </div>
+                  
                 </div>
+            </div>
+            <div class="col-md-12">
+            <hr>
+            <h3>Product Description</h3>
+            <p class="mt-3">{{$products->description}}</p>
             </div>
         </div>
     </div>
 </div>
+<br><br>
 @endsection
