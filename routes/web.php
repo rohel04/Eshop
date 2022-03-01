@@ -20,11 +20,10 @@ use App\Http\Controllers\Frontend\FrontController;
 */
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/',[FrontController::class,'index']);
+Route::get('/categories_front',[FrontController::class,'category']);
+Route::get('/view-category/{slug}',[FrontController::class,'view_category']);
+Route::get('/category/{cate_slug}/{prod_slug}',[FrontController::class,'view_products']);
 
 Auth::routes();
 

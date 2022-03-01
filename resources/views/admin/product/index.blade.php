@@ -12,7 +12,7 @@
                     <th>S.N</th>
                     <th>Name</th>
                     <th>Category</th>
-                    <th>Description</th>
+                    
                     <th>Selling Price</th>
                     <th>Image</th>
                     <th>Action</th>
@@ -27,7 +27,7 @@
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;{{++$i}}</td>
                     <td>{{$item->name}}</td>
                     <td>&nbsp;&nbsp;{{$item->category->name}}</td>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$item->description}}</td>
+               
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rs.{{$item->selling_price}}</td>
                     <td>
                         <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="No img" width="80" height="90">

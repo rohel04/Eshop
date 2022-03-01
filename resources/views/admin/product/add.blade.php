@@ -37,11 +37,11 @@
                 </div><!--col-->
                 <div class="col-md-12 mb-3">
                     <label for="">Small Description</label>
-                    <textarea name="small_description" rows="3" class="form-control" style="background-color: #E3E3E3;padding:5px">{{old('description')}}</textarea>
+                    <textarea maxlength="20" name="small_description" rows="3" class="form-control" style="background-color: #E3E3E3;padding:5px">{{old('description')}}</textarea>
                 </div><!--col-->
                 <div class="col-md-12 mb-3">
                     <label for="">Description</label>
-                    <textarea name="description" rows="3" class="form-control" style="background-color: #E3E3E3;padding:5px">{{old('description')}}</textarea>
+                    <textarea maxlength="100" name="description" rows="3" class="form-control" style="background-color: #E3E3E3;padding:5px">{{old('description')}}</textarea>
                 </div><!--col-->
                 <div class="col-md-6 mb-3">
                     <label for="">Oiginal Price:</label>
