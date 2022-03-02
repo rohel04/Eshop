@@ -8,7 +8,7 @@
 
     <div class="py-5">
       <div class="container">
-        <h3>Featured Products</h3>
+        <h3 style="font-family:fantasy">Featured Products</h3>
         <hr style="border:1px solid #4D4D4D">
         <br>
         <div class="row">
@@ -29,7 +29,7 @@
           @endforeach
         </div>
         <br><br>
-        <h3>Popular Categories</h3>
+        <h3 style="font-family:fantasy">Popular Categories</h3>
         <hr style="border:1px solid #4D4D4D">
         <br>
         <div class="row">

@@ -36,9 +36,11 @@ class FrontController extends Controller
     }
     public function view_products($cate_slug,$prod_slug)
     {
-            $category=Category::where('slug',$cate_slug);
+            
             $products=Product::where('slug',$prod_slug)->first();
-            return view('frontend.viewproduct',compact('products'));
+            $cate_id=$products->cate_id;
+            $rel_products=Product::where('cate_id',$cate_id)->take(4)->get();
+            return view('frontend.viewproduct',compact('products','rel_products'));
             
         
     }
