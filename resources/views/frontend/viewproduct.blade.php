@@ -6,7 +6,7 @@
 <br><br><br>
 <div class="py-2 mb-4 shadow-sm bg-warning border-top" >
     <div class="container">
-        <h6  style="font-size: 14px" class="mb-0">Collections &nbsp;> &nbsp;{{$products->category->name}} &nbsp;> &nbsp; {{$products->name}}</h6>
+        <h6  style="font-size: 14px" class="mb-0"><a style="text-decoration: none;color:black" href="{{url('categories_front')}}">Collections</a> &nbsp;> &nbsp;<a style="text-decoration: none;color:black" href="{{url('view-category/'.$products->category->slug)}}">{{$products->category->name}}</a> &nbsp;> &nbsp; {{$products->name}}</h6>
     </div>
 </div>
 <div class="container">

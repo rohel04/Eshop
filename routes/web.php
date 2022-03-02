@@ -28,10 +28,13 @@ Route::get('/category/{cate_slug}/{prod_slug}',[FrontController::class,'view_pro
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [FrontController::class,'index'])->name('home');
+Route::post('/add-to-cart',[CartController::class,'addproducts']);
+
 
 Route::middleware(['auth'])->group(function(){
-    Route::post('/add-to-cart',[CartController::class,'addproducts']);
+    Route::get('/cart',[CartController::class,'viewcart']);
+    Route::post('/delete-cart-item',[CartController::class,'delete']);
 });
 
 Route::group(['middleware' => ['auth','isAdmin']], function () {

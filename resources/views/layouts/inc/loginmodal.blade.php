@@ -1,8 +1,10 @@
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered" role="document" >
+      <div class="modal-content" style="background-color:#F9F5F5;
+      border-radius: 25px;">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5>
+          {{-- <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5> --}}
+          <img src="{{asset('assets/images/user_logo.png')}}" alt="user_logo" width="60" height="60" style="margin-right:45%;margin-left:45%">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -53,12 +55,12 @@
 
             <div class="row mb-0">
                 <div class="col-md-8 offset-md-4">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-dark">
                         {{ __('Login') }}
                     </button>
 
                     @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                        <a style="color:black" class="btn btn-black" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
                     @endif
@@ -70,3 +72,4 @@
       </div>
     </div>
   </div>
+  

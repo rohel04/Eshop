@@ -57,7 +57,7 @@
       swal("{{session('deny')}}");
     </script>
   @endif
-    @if(session('status'))
+    {{-- @if(session('status'))
     <script>
       swal("{{session('status')}}"," ","success");
     </script>
@@ -66,7 +66,7 @@
     <script>
       swal("{{session('home')}}");
     </script>
-  @endif
+  @endif --}}
   @yield('scripts')
     </body>
     

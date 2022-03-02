@@ -12,8 +12,8 @@
         <li class="nav-item {{Request::is('categories_front')?'active':''}}" style="padding-left: 8px">
           <a class="nav-link" href="{{url('/categories_front')}}">Categories</a>
         </li>
-        <li class="nav-item" style="padding-left: 8px">
-          <a class="nav-link" href="#">Pricing</a>
+        <li class="nav-item {{Request::is('cart')?'active':''}}"" style="padding-left: 8px">
+          <a class="nav-link" href="{{url('/cart')}}">Cart</a>
         </li>
       </ul>
       <ul class="navbar-nav ms-auto">
