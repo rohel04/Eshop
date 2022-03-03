@@ -57,12 +57,19 @@
       swal("{{session('deny')}}");
     </script>
   @endif
-    {{-- @if(session('status'))
+    @if(session('status1'))
     <script>
-      swal("{{session('status')}}"," ","success");
+      swal("{{session('status1')}}");
+      {{Session::forget('status1')}};
     </script>
   @endif
-  @if(session('home'))
+  @if(session('stat'))
+  <script>
+    swal("{{session('stat')}}");
+    {{Session::forget('status1')}};
+  </script>
+@endif
+  {{-- @if(session('home'))
     <script>
       swal("{{session('home')}}");
     </script>

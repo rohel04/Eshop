@@ -47,8 +47,9 @@
                         <div class="col-md-10">
                             <br>
                             <button type="button" class="btn btn-success me-3 addToCart float-start">Add to wishlist <i class="fa fa-heart"></i></button>
+                            @if($products->qty>0)
                             <button type="button" class="btn btn-primary me-3 addToCart float-start">Add to cart <i class="fa fa-shopping-cart"></i></button>
-
+                            @endif
                         </div>
                         
                     </div>

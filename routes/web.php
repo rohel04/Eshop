@@ -38,6 +38,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/delete-cart-item',[CartController::class,'delete']);
     Route::post('/update-cart',[CartController::class,'updateCart']);
     Route::get('/checkout',[CheckoutController::class,'index']);
+    Route::post('/place-order',[CheckoutController::class,'placeorder']);
 });
 
 Route::group(['middleware' => ['auth','isAdmin']], function () {

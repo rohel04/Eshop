@@ -42,14 +42,20 @@
 @if(session('status'))
   <script>
     swal("{{session('status')}}"," ","success");
+   
   </script>
 @endif
 @if(session('home'))
   <script>
     swal("{{session('home')}}");
+    
+           
+        
   </script>
 @endif
-
+@php
+Session::forget('status');
+@endphp
 </body>
 
 </html>
