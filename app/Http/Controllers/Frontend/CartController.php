@@ -24,7 +24,7 @@ class CartController extends Controller
             {
                 if(Cart::where('prod_id',$product_id)->where('user_id',Auth::id())->exists())
                 {
-                    return response()->json(['status1'=>$prod_check->name." Already added into cart"]);
+                    return response()->json(['status1'=>$prod_check->name." is already added into cart"]);
                 }
                 else
                 {
@@ -33,7 +33,7 @@ class CartController extends Controller
                 $cartItem->prod_id=$product_id;
                 $cartItem->prod_qty=$product_qty;
                 $cartItem->save();
-                return response()->json(['status1'=>$prod_check->name." Added to cart"]);
+                return response()->json(['status1'=>$prod_check->name." is added to cart"]);
                 }
             }
         }
@@ -64,6 +64,27 @@ class CartController extends Controller
         }
         else
         {
+            return response()->json(['status1'=>"Login to continue"]);
+        }
+    }
+
+    public function updateCart(Request $request)
+    {
+        $product_id=$request->input('prod_id');
+        $product_qty=$request->input('prod_qty');
+
+        if(Auth::check())
+        {
+            if(Cart::where('prod_id',$product_id)->where('user_id',Auth::id())->exists())
+            {
+                $cartItem=Cart::where('prod_id',$product_id)->where('user_id',Auth::id())->first();
+                $cartItem->prod_qty=$product_qty;
+                $cartItem->update();
+
+                return response()->json(['status1'=>"Cart Updated"]);
+            }
+        }
+        else{
             return response()->json(['status1'=>"Login to continue"]);
         }
     }
