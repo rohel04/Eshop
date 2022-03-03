@@ -86,6 +86,7 @@
 @section('scripts')
     <script>
         $(document).ready(function(){
+            cartcount();
 
             $('.addToCart').click(function (){
                 var product_id=$(this).closest('.product_data').find('.prod_id').val();
@@ -106,7 +107,10 @@
                            'product_qty':product_qty
                        },
                        success:function(response){
+                           
                         swal(response.status1);
+                        cartcount();
+                        
                        }
                        
                    }
@@ -181,6 +185,19 @@
                     }
                 });
             });
+
+            function cartcount()
+            {
+                $.ajax({
+                    method:"GET",
+                    url:"/load-cart-data",
+                    success:function(response)
+                    {
+                        $('.cartcount').html(response.count);
+                        console.log(response.count)
+                    }
+                });
+            }
         });
     </script>
 @endsection

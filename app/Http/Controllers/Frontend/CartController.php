@@ -88,4 +88,9 @@ class CartController extends Controller
             return response()->json(['status1'=>"Login to continue"]);
         }
     }
+    public function cartcount()
+    {
+        $cartcount=Cart::where('user_id',Auth::id())->count();
+        return response()->json(['count'=>$cartcount]);
+    }
 }

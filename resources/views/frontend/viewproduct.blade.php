@@ -114,6 +114,7 @@
                        },
                        success:function(response){
                         swal(response.status1);
+                        cartcount();
                        }
                        
                    }
@@ -143,6 +144,18 @@
                 } 
 
             });
+            function cartcount()
+            {
+                $.ajax({
+                    method:"GET",
+                    url:"/load-cart-data",
+                    success:function(response)
+                    {
+                        $('.cartcount').html(response.count);
+                        console.log(response.count)
+                    }
+                });
+            }
         });
     </script>
 @endsection
