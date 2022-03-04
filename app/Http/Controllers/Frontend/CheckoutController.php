@@ -30,6 +30,19 @@ class CheckoutController extends Controller
     }
     public function placeorder(Request $request)
     {
+        $validate=$request->validate([
+            'fname'=>'required',
+            'lname'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'address1'=>'required',
+            'address2'=>'required',
+            'city'=>'required',
+            'state'=>'required',
+            'country'=>'required',
+            'pincode'=>'required',
+        ]);
+
         $order=new Order();
         $order->user_id=Auth::id();
         $order->fname=$request->input('fname');
@@ -42,7 +55,18 @@ class CheckoutController extends Controller
         $order->state=$request->input('state');
         $order->country=$request->input('country');
         $order->pincode=$request->input('pincode');
-        $order->tracking_no='admin'.rand(1111,9999);
+
+        $total=0;
+        $cartTotal=Cart::where('user_id',Auth::id())->get();
+        foreach($cartTotal as $item)
+        {
+            
+            $t=$item->product->selling_price * $item->prod_qty;
+            $total+=$t;
+
+        }
+        $order->total_price=$total;
+        $order->tracking_no='parcel'.rand(1111,9999);
         $order->save();
 
         $cartItems=Cart::where('user_id',Auth::id())->get();
@@ -52,7 +76,7 @@ class CheckoutController extends Controller
                 'order_id'=>$order->id,
                 'prod_id'=>$item->prod_id,
                 'qty'=>$item->prod_qty,
-                'price'=>$item->product->selling_price,
+                'price'=>$item->prod_qty * $item->product->selling_price,
 
             ]);
 
@@ -71,7 +95,9 @@ class CheckoutController extends Controller
             $user->city=$request->input('city');
             $user->state=$request->input('state');
             $user->country=$request->input('country');
-            $user->pincode=$request->input('pincode');  
+            $user->pincode=$request->input('pincode'); 
+            
+            
             $user->update();
         }
 

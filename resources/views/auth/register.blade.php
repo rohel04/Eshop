@@ -28,11 +28,14 @@
 
 
 </head>
-<body style="background-color: #D5CDCC">
+<body style="background-image: url('assets/images/log.jpg');-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;">
 <div class="container my-5">
     <div class="row justify-content-center" style="padding-top:10%">
-        <div class="col-md-8">
-            <div class="card" style="background-color:#E7E1E1;border: 2px solid black;
+        <div class="col-md-7">
+            <div class="card" style="background-color:#E7E1E1;
             border-radius: 25px;">
                 <div class="card-header"><img src="{{asset('assets/images/user_logo.png')}}" alt="user_logo" width="60" height="60" style="margin-right:45%;margin-left:45%"></div>
 

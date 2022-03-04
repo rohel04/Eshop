@@ -11,6 +11,15 @@
     </div>
   </div>
     <div class="container mt-3">
+         @if ($errors->any())
+         <div class="alert alert-danger" >
+         <ul>
+            @foreach ($errors->all() as $error)
+                <li style="color: black">{{ $error }}</li>
+            @endforeach
+        </ul>
+        </div>
+        @endif
         <form action="{{url('/place-order')}}" method="post">
             @csrf
         <div class="row">
@@ -19,45 +28,45 @@
                     <div class="card-body">
                         <h3>Biling Details</h3>
                         <hr>
-                        <div class="row checkout-form">
+                        <div class="row checkout ">
                             <div class="col-md-6">
-                                <label for="">First Name</label>
+                                <label for="">First Name <span>*</span></label>
                                 <input type="text" name="fname" value="{{Auth::user()->name}}" class="form-control" placeholder="Enter First Name">
                             </div>
                             <div class="col-md-6">
-                                <label for="">Last Name</label>
+                                <label for="">Last Name <span>*</span></label>
                                 <input type="text" name="lname" value="{{Auth::user()->lname}}" class="form-control" placeholder="Enter Last Name">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="">Email</label>
+                                <label for="">Email <span>*</span></label>
                                 <input type="text" name="email" value="{{Auth::user()->email}}" class="form-control" placeholder="Enter Email">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="">Phone Number</label>
+                                <label for="">Phone Number <span>*</span></label>
                                 <input type="text" name="phone" value="{{Auth::user()->phone}}" class="form-control" placeholder="Enter Phone Number">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="">Address 1</label>
+                                <label for="">Address 1 <span>*</span></label>
                                 <input type="text" name="address1" value="{{Auth::user()->address1}}" class="form-control" placeholder="Enter Address 1">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="">Address 2</label>
+                                <label for="">Address 2 <span>*</span></label>
                                 <input type="text" name="address2" value="{{Auth::user()->address2}}" class="form-control" placeholder="Enter Address 2">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="">City</label>
+                                <label for="">City <span>*</span></label>
                                 <input type="text" name="city" value="{{Auth::user()->city}}" class="form-control" placeholder="Enter City">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="">State</label>
+                                <label for="">State <span>*</span></label>
                                 <input type="text" name="state" value="{{Auth::user()->state}}" class="form-control" placeholder="Enter State">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="">Country</label>
+                                <label for="">Country <span>*</span></label>
                                 <input type="text" name="country" value="{{Auth::user()->country}}" class="form-control" placeholder="Enter Country">
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label for="">Pincode</label>
+                                <label for="">Pincode <span>*</span></label>
                                 <input type="text" name="pincode" value="{{Auth::user()->pincode}}" class="form-control" placeholder="Enter Pincode">
                             </div>
                         </div>
@@ -92,7 +101,11 @@
                                     
                             </tbody>
                         </table>
+                        @if($cartItems->isEmpty())
+                        <h5>Your <i class="fa fa-shopping-cart"></i>cart is Empty!!</h5>
+                        @else
                         <a href="{{url('/place-order')}}"><button class="btn btn-primary w-100" style="float:right">Place order</button></a>
+                        @endif
                     </div>
             </div>
         </div>

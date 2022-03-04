@@ -12,12 +12,15 @@
 </div>
 <div class="container my-5">
     
-    @if($cart_item->isEmpty())
-    <div class="card">
-    <center><h3>No items in cart</h3></center>
-    </div>
-    @else
+   
     <div class="card shadow" style="box-shadow: 3px 3px 3px 3px #BDB8B8;">
+        @if($cart_item->isEmpty())
+        <div class="card-body text-center">
+        <h3>Your <i class="fa fa-shopping-cart"></i>Cart is Empty !!</h3>
+        <hr>
+        <a href="/categories_front"><button class="btn btn-outline-success" style="float:right">Continue Shopping</button></a>
+        </div>
+        @else
         <div class="card-body">
             
             @php

@@ -41,6 +41,9 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #998D33;text-decoration:none;padding-left:12px;">{{Auth::user()->name}}
           <span class="caret"></span></a>
           <ul class="dropdown-menu" style="width:10px">
+            <li><a class="dropdown-item" href="{{url('my-orders')}}">My Orders           
+            </a>
+           </li>
             <li><a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -51,6 +54,7 @@
            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                @csrf
            </form></li>
+           
            
           </ul>
           @endguest

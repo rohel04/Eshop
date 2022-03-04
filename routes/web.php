@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontController;
+use App\Http\Controllers\Frontend\UserController;
+
 
 
 /*
@@ -40,6 +42,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/checkout',[CheckoutController::class,'index']);
     Route::post('/place-order',[CheckoutController::class,'placeorder']);
     Route::get('/load-cart-data',[CartController::class,'cartcount']);
+    Route::get('/my-orders',[UserController::class,'index']);
+    Route::get('/view-orders/{id}',[UserController::class,'view']);
+
 });
 
 Route::group(['middleware' => ['auth','isAdmin']], function () {

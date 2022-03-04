@@ -7,7 +7,7 @@
     <br>
     <div class="carousel-inner" >
       <div class="carousel-item active">
-        <img class="d-block w-100" src="{{asset('assets/images/all.jpeg')}}" alt="First slide"  style="height: 510px" >
+        <img class="d-block w-100" src="{{asset('assets/images/all.jpeg')}}" alt="First slide"  style="height: 510px;" >
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="{{asset('assets/images/slider2.jpg')}}" alt="Second slide"  style="height: 510px">
