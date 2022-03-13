@@ -10,10 +10,10 @@
         <img class="d-block w-100" src="{{asset('assets/images/all.jpeg')}}" alt="First slide"  style="height: 510px;" >
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="{{asset('assets/images/slider2.jpg')}}" alt="Second slide"  style="height: 510px">
+        <img class="d-block w-100" src="{{asset('assets/images/all.jpeg')}}" alt="Second slide"  style="height: 510px">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="{{asset('assets/images/kids.jpg')}}" alt="Third slide"  style="height: 510px">
+        <img class="d-block w-100" src="{{asset('assets/images/all.jpeg')}}" alt="Third slide"  style="height: 510px">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

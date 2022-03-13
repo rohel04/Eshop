@@ -46,7 +46,6 @@
                         </div>
                         <div class="col-md-10">
                             <br>
-                            <button type="button" class="btn btn-success me-3 addToCart float-start">Add to wishlist <i class="fa fa-heart"></i></button>
                             @if($products->qty>0)
                             <button type="button" class="btn btn-primary me-3 addToCart float-start">Add to cart <i class="fa fa-shopping-cart"></i></button>
                             @endif
@@ -77,7 +76,7 @@
         <div class="card"  style="box-shadow: 3px 3px 3px 3px #BDB8B8;">
           <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="product image">
           <div class="card-body">
-            <h5>{{$item->name}}</h5>
+            <h6>{{$item->name}}</h6>
             <small style="font-weight: bold">Rs. {{$item->selling_price}}</small>&nbsp;&nbsp;
             <s>Rs. {{$item->original_price}}</s>
           </div>

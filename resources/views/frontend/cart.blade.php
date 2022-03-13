@@ -81,10 +81,13 @@
         
         <a href="{{url('checkout')}}"><button class="btn btn-outline-success" style="float:right">Proceed to Checkout</button></a>
        
+        </div>
     </div>
-</div>
-@endif
 
+
+@endif
+</div>
+<br><br><br>
 @endsection
 @section('scripts')
     <script>

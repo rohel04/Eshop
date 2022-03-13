@@ -23,7 +23,7 @@
           <div class="card" style="box-shadow: 3px 3px 3px 3px #BDB8B8;">
             <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="product image">
             <div class="card-body">
-              <h5>{{$item->name}}</h5>
+              <h6>{{$item->name}}</h6>
               <small>Rs. {{$item->selling_price}}</small>
             </div>
           </div>
@@ -31,6 +31,7 @@
         </div>
         @endforeach
       </div>
+    </div>
 
 @section('scripts')
     <script>

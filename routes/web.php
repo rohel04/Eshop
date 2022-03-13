@@ -3,14 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\admin\OrderController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\Frontend\UserController;
-
-
+use App\Http\Controllers\frontend\WishListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,21 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/load-cart-data',[CartController::class,'cartcount']);
     Route::get('/my-orders',[UserController::class,'index']);
     Route::get('/view-orders/{id}',[UserController::class,'view']);
+
+    Route::get('orders',[OrderController::class,'index']);
+    Route::get('admin/view-orders/{id}',[OrderController::class,'view']);
+    Route::put('update-order/{id}',[OrderController::class,'update']);
+    Route::get('orders-history',[OrderController::class,'history']);
+
+    Route::get('users',[DashboardController::class,'index']);
+    Route::get('admin/view-users/{id}',[DashboardController::class,'view']);
+
+    Route::get('wishlist',[WishListController::class,'index']);
+
+    
+
+
+    
 
 });
 

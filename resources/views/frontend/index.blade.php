@@ -3,23 +3,37 @@
  Welcome to E-shop   
 @endsection
 @section('content')
+<br>
+{{-- <div class="" style="
+  background-image: url('{{asset('assets/images/ban7.jpg')}}');
+  height: 450px;
+  
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;"
+> </div> --}}
+@include('layouts.inc.slider')
 
-    @include('layouts.inc.slider')
+
+
+
+    
 
     <div class="py-5">
       <div class="container">
         <h3 style="font-family:fantasy">Featured Products</h3>
-        <hr style="border:1px solid #4D4D4D">
+        <hr style="border:1px solid  #585858">
         <br>
         <div class="row">
                     
           @foreach ($featured_products as $item)                      
           <div class="col-md-3">
             <a href="{{url('category/'.$item->category->slug.'/'.$item->slug)}}" style="text-decoration: none;color:black">
-            <div class="card"  style="box-shadow: 3px 3px 3px 3px #BDB8B8;">
+            <div class="card"  style="box-shadow: 2px 2px 2px 2px #D8D8D8;">
               <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="product image">
               <div class="card-body">
-                <h5>{{$item->name}}</h5>
+                <h6>{{$item->name}}</h6>
                 <small style="font-weight: bold">Rs. {{$item->selling_price}}</small>&nbsp;&nbsp;
                 <s>Rs. {{$item->original_price}}</s>
               </div>
@@ -40,7 +54,7 @@
             <div class="card"  style="box-shadow: 3px 3px 3px 3px #BDB8B8;">
               <img src="{{asset('assets/uploads/category/'.$trend->image)}}" alt="category image" height="270px">
               <div class="card-body">
-                <h5>{{$trend->name}}</h5>
+                <h6>{{$trend->name}}</h6>
                 <p>{{$trend->description}}</p>
               </div>
             </div>

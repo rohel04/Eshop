@@ -18,7 +18,7 @@
             <div class="card"  style="box-shadow: 3px 3px 3px 3px #BDB8B8;">
               <img src="{{asset('assets/uploads/category/'.$item->image)}}" alt="Category image" height="270px">
               <div class="card-body">
-                <h5>{{$item->name}}</h5>
+                <h6>{{$item->name}}</h6>
                <p>{{$item->description}}</p>
               </div>
             </div>

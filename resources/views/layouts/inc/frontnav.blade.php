@@ -13,15 +13,11 @@
           <a class="nav-link" href="{{url('/categories_front')}}">Categories</a>
         </li>
         <li class="nav-item {{Request::is('cart')?'active':''}}"" style="padding-left: 8px">
-          <a class="nav-link" href="{{url('/cart')}}">Cart&nbsp;
+          <a class="nav-link" href="{{url('/cart')}}"><i class="fa fa-shopping-cart"></i>&nbsp;Cart
           <span class="badge badge-danger cartcount" style="font-size:14px">0</span>
           </a>
         </li>
-        <li class="nav-item style="padding-left: 8px">
-          <a class="nav-link" href="#">WhishList&nbsp;
-          <span class="badge badge-light" style="font-size:14px">0</span>
-          </a>
-        </li>
+        
       </ul>
       <ul class="navbar-nav ms-auto">
         <li class="dropdown" style="margin: auto;">
