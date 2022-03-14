@@ -51,8 +51,8 @@
           @foreach ($trending_cat as $trend)                      
           <div class="col-md-3">
             <a href="{{url('view-category/'.$trend->slug)}}" style="text-decoration: none;color:black">
-            <div class="card"  style="box-shadow: 3px 3px 3px 3px #BDB8B8;">
-              <img src="{{asset('assets/uploads/category/'.$trend->image)}}" alt="category image" height="270px">
+            <div class="card"  style="box-shadow: 2px 2px 2px 2px #D8D8D8;">
+              <img src="{{asset('assets/uploads/category/'.$trend->image)}}" alt="category image" height="270">
               <div class="card-body">
                 <h6>{{$trend->name}}</h6>
                 <p>{{$trend->description}}</p>

@@ -22,8 +22,8 @@
           <!-- Grid column -->
   
           <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-42">
+            
             <h6 class="text-uppercase fw-bold mb-4">
               Explore
             </h6>
@@ -47,10 +47,22 @@
           <!-- Grid column -->
   
           <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
-              Get Connected with:
+             Customer Service
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Email:&nbsp;contactOnlinestore@gmail.com</a>
+            </p>
+           
+          </div>
+          <!-- Grid column -->
+  
+          <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-md-0 mb-4" style="margin-top:30px">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Follow Us:
             </h6>
             <a href="" class="me-4 text-reset">
               <i class="fab fa-facebook-f"></i>

@@ -104,7 +104,8 @@
                         @if($cartItems->isEmpty())
                         <h5>Your <i class="fa fa-shopping-cart"></i>cart is Empty!!</h5>
                         @else
-                        <a href="{{url('/place-order')}}"><button class="btn btn-primary w-100" style="float:right">Place order</button></a>
+                        <a href="{{url('/place-order')}}"><button class="btn btn-primary w-100" style="float:right">Place order COD</button></a>
+                        <span>* Cash On Delivery</span>
                         @endif
                     </div>
             </div>

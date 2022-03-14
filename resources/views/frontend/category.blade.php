@@ -15,7 +15,7 @@
           @foreach ($categories as $item)                      
           <div class="col-md-3">
               <a href="{{url('view-category/'.$item->slug)}}" style="text-decoration: none;color:black">
-            <div class="card"  style="box-shadow: 3px 3px 3px 3px #BDB8B8;">
+            <div class="card"  style="box-shadow: 2px 2px 2px 2px #D8D8D8;">
               <img src="{{asset('assets/uploads/category/'.$item->image)}}" alt="Category image" height="270px">
               <div class="card-body">
                 <h6>{{$item->name}}</h6>

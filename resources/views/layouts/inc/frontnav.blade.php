@@ -7,13 +7,13 @@
       
       <ul class="navbar-nav me-auto ">
         <li class="nav-item {{Request::is('/')?'active':''}}" style="padding-left: 6px">
-          <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{url('/')}}"><i class="fa fa-home"></i>&nbsp;&nbsp;Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item {{Request::is('categories_front')?'active':''}}" style="padding-left: 8px">
-          <a class="nav-link" href="{{url('/categories_front')}}">Categories</a>
+          <a class="nav-link" href="{{url('/categories_front')}}"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Categories</a>
         </li>
         <li class="nav-item {{Request::is('cart')?'active':''}}"" style="padding-left: 8px">
-          <a class="nav-link" href="{{url('/cart')}}"><i class="fa fa-shopping-cart"></i>&nbsp;Cart
+          <a class="nav-link" href="{{url('/cart')}}"><i class="fa fa-shopping-cart"></i>&nbsp;Cart&nbsp;
           <span class="badge badge-danger cartcount" style="font-size:14px">0</span>
           </a>
         </li>
@@ -34,7 +34,7 @@
               </li>
           @endif
           @else
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #998D33;text-decoration:none;padding-left:12px;">{{Auth::user()->name}}
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #998D33;text-decoration:none;padding-left:12px;"><i class="fa fa-user"></i>&nbsp;&nbsp;{{Auth::user()->name}}
           <span class="caret"></span></a>
           <ul class="dropdown-menu" style="width:10px">
             <li><a class="dropdown-item" href="{{url('my-orders')}}">My Orders           

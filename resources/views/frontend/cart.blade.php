@@ -13,7 +13,7 @@
 <div class="container my-5">
     
    
-    <div class="card shadow" style="box-shadow: 3px 3px 3px 3px #BDB8B8;">
+    <div class="card shadow" style="box-shadow: 2px 2px 2px 2px #D8D8D8;">
         @if($cart_item->isEmpty())
         <div class="card-body text-center">
         <h3>Your <i class="fa fa-shopping-cart"></i>Cart is Empty !!</h3>
@@ -21,7 +21,7 @@
         <a href="/categories_front"><button class="btn btn-outline-success" style="float:right">Continue Shopping</button></a>
         </div>
         @else
-        <div class="card-body">
+        <div class="card-body" style="margin-bottom: 20px">
             
             @php
                 $total_each;

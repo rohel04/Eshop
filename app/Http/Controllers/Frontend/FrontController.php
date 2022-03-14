@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Rating;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -38,9 +39,21 @@ class FrontController extends Controller
     {
             
             $products=Product::where('slug',$prod_slug)->first();
+            $ratings=Rating::where('prod_id',$products->id)->get();
+            $ratings_sum=Rating::where('prod_id',$products->id)->sum('stars_rated');
+            if($ratings->count()> 0)
+            {
+                $ratings_value=$ratings_sum/$ratings->count();
+            }
+            else
+            {
+                $ratings_value=0;
+            }
+
+            
             $cate_id=$products->cate_id;
             $rel_products=Product::where('cate_id',$cate_id)->take(4)->get();
-            return view('frontend.viewproduct',compact('products','rel_products'));
+            return view('frontend.viewproduct',compact('products','rel_products','ratings','ratings_value'));
             
         
     }
