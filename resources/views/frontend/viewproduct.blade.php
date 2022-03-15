@@ -53,7 +53,7 @@
                 <div class="col-md-4 border-right">
                     <img src="{{asset('assets/uploads/products/'.$products->image)}}" class="w-100" alt="">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <h3 class="mb-0">
                         {{$products->name}}
                         <label style="font-size: 16px;color:white" class="float-end badge bg-danger trending_tag" style="float: right" >{{$products->trending =="1"?'Trending':''}}</label>
@@ -94,7 +94,7 @@
                         <div class="col-md-10">
                             <br>
                             @if($products->qty>0)
-                            <button type="button" class="btn btn-primary me-3 addToCart float-start">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                            <button type="button" class="btn btn-primary w-50 me-3 addToCart float-start">Add to cart <i class="fa fa-shopping-cart"></i></button>
                             @endif
                         </div>
                         
@@ -111,9 +111,13 @@
             </div>
             <hr>
             <div class="col-md-12">
+                @if(Auth::check())
                 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color: #D05C5C">
                     Rate this product
                   </button>
+                  @else
+                  <h6 style="color: #D05C5C">* Login to rate this product</h6>
+                  @endif
             </div>
         </div>
     </div>
@@ -128,8 +132,8 @@
       @else                   
       <div class="col-md-3">
         <a href="{{url('category/'.$item->category->slug.'/'.$item->slug)}}" style="text-decoration: none;color:black">
-        <div class="card"  style="box-shadow: 2px 2px 2px 2px #D8D8D8;">
-          <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="product image">
+        <div class="card"  style="box-shadow: 1px 1px 1px 1px #D8D8D8;">
+          <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="product image" height="290">
           <div class="card-body">
             <h6>{{$item->name}}</h6>
             <small style="font-weight: bold">Rs. {{$item->selling_price}}</small>&nbsp;&nbsp;

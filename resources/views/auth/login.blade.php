@@ -36,7 +36,7 @@ background-size: cover;">
     <div class="row justify-content-center" style="padding-top:10%">
        
         <div class="col-md-7">
-            <div class="card" style="background-color:#E7E1E1;
+            <div class="card" style="
             border-radius: 25px;">
                 <div class="card-header"><img src="{{asset('assets/images/user_logo.png')}}" alt="user_logo" width="60" height="60" style="margin-right:45%;margin-left:45%"></div>
 
@@ -89,6 +89,14 @@ background-size: cover;">
                                 <button type="submit" class="btn btn-dark">
                                     {{ __('Login') }}
                                 </button>
+                                <a href="#">Register</a>
+                                {{-- <a class="nav-link" href="{{ route('register') }}" data-toggle="modal" data-target="#register">Register</a> --}}
+{{-- 
+                                @if (Route::has('register'))
+              <li class="nav-item" style="padding-left: 8px">
+                  <a class="nav-link" href="{{ route('register') }}" data-toggle="modal" data-target="#register">{{ __('Register') }}</a>
+              </li>
+          @endif --}}
 
                                 @if (Route::has('password.request'))
                                     <a style="color:black" class="btn btn-link" href="{{ route('password.request') }}">

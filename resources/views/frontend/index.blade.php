@@ -28,14 +28,15 @@
         <div class="row">
                     
           @foreach ($featured_products as $item)                      
-          <div class="col-md-3">
+          <div class="col-md-3 mt-3">
             <a href="{{url('category/'.$item->category->slug.'/'.$item->slug)}}" style="text-decoration: none;color:black">
-            <div class="card"  style="box-shadow: 2px 2px 2px 2px #D8D8D8;">
-              <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="product image">
+            <div class="card"  style="box-shadow: 1px 1px 1px 1px #D8D8D8;">
+              <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="product image" height="290" >
               <div class="card-body">
                 <h6>{{$item->name}}</h6>
                 <small style="font-weight: bold">Rs. {{$item->selling_price}}</small>&nbsp;&nbsp;
                 <s>Rs. {{$item->original_price}}</s>
+                
               </div>
             </div>
             </a>
@@ -51,8 +52,8 @@
           @foreach ($trending_cat as $trend)                      
           <div class="col-md-3">
             <a href="{{url('view-category/'.$trend->slug)}}" style="text-decoration: none;color:black">
-            <div class="card"  style="box-shadow: 2px 2px 2px 2px #D8D8D8;">
-              <img src="{{asset('assets/uploads/category/'.$trend->image)}}" alt="category image" height="270">
+            <div class="card"  style="box-shadow: 1px 1px 1px px #D8D8D8;">
+              <img src="{{asset('assets/uploads/category/'.$trend->image)}}" alt="category image" height="270" style="object-fit: cover">
               <div class="card-body">
                 <h6>{{$trend->name}}</h6>
                 <p>{{$trend->description}}</p>

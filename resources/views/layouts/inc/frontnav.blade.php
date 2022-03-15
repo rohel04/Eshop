@@ -24,15 +24,11 @@
           @guest
           @if (Route::has('login'))
               <li class="nav-item" style="padding-left: 8px">
-                  <a  class="nav-link" href="{{ route('login') }}" data-toggle="modal" data-target="#exampleModalCenter">{{ __('Login') }}</a>
+                  <a  class="nav-link" href="{{ route('login') }}" data-toggle="modal" data-target="#exampleModalCenter"> <i class="fa fa-sign-in"></i>&nbsp; {{ __('Sign in') }}</a>
               </li>
           @endif
 
-          @if (Route::has('register'))
-              <li class="nav-item" style="padding-left: 8px">
-                  <a class="nav-link" href="{{ route('register') }}" data-toggle="modal" data-target="#register">{{ __('Register') }}</a>
-              </li>
-          @endif
+         
           @else
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #998D33;text-decoration:none;padding-left:12px;"><i class="fa fa-user"></i>&nbsp;&nbsp;{{Auth::user()->name}}
           <span class="caret"></span></a>

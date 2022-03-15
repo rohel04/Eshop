@@ -1,6 +1,6 @@
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
     <div class="modal-dialog modal-dialog-centered" role="document" >
-      <div class="modal-content" style="background-color:#F9F5F5;
+      <div class="modal-content" style="
       border-radius: 25px;">
         <div class="modal-header">
           {{-- <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5> --}}
@@ -55,15 +55,21 @@
 
             <div class="row mb-0">
                 <div class="col-md-8 offset-md-4">
-                    <button type="submit" class="btn btn-dark">
-                        {{ __('Login') }}
+                    <button type="submit" class="btn btn-dark w-100">
+                        {{ __('Sign in') }}
                     </button>
-
+                    
+                  
                     @if (Route::has('password.request'))
                         <a style="color:black" class="btn btn-black" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
                     @endif
+                </div>
+            </div>
+            <div class="row mb-0">
+                <div class="col-md-8 offset-md-4">
+                <a class="nav-link" href="{{ route('register') }}" data-toggle="modal" data-target="#register"><button class="btn btn-dark w-110"> Sign Up</button></a>
                 </div>
             </div>
         </form>

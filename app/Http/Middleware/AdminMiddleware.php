@@ -26,7 +26,7 @@ class AdminMiddleware
             }
             else
             {
-                return redirect('/')->with('deny','Access Denied! as you are not as admin');
+                return redirect('/')->with('deny','Access Denied! As you are not as admin');
             }
         }
         else
