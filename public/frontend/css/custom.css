@@ -44,8 +44,16 @@ footer a:hover{
 }
 
 .card img{
-  object-fit: cover;
+  object-fit:cover;
 }
 .card s{
   float: right;
+}
+.search{
+  width: 27%;
+  padding-left: 2%;
+  
+}
+.ui-menu{
+  z-index: 3500 !important;
 }

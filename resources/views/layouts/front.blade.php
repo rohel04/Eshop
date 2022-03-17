@@ -16,6 +16,7 @@
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
   <!-- CSS Files -->
   <link href="{{asset('frontend/css/bootstrap5.css')}}" rel="stylesheet" />
   <link href="{{asset('frontend/css/custom.css')}}" rel="stylesheet" />
@@ -50,9 +51,28 @@
     <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}"></script> 
     <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script> 
   {{-- <script src="{{asset('frontend/js/slim.min.js')}}"></script>  --}}
-    
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> --}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      
+        var availableTags = [];
+
+        $.ajax({
+          method:"GET",
+          url:"product-list",
+        success:function(response) {
+          productList(response)
+        }
+      });
+
+      function productList(availableTags)
+      {
+        $( "#search_product" ).autocomplete({
+          source: availableTags
+        });
+      }
+      </script>
     <script>
       $(document).ready(function(){
                cartcount();
@@ -79,14 +99,20 @@
     @if(session('status1'))
     <script>
       swal("{{session('status1')}}");
-      {{Session::forget('status1')}};
+     
     </script>
   @endif
   @if(session('stat'))
   <script>
     swal("{{session('stat')}}");
-    {{Session::forget('status1')}};
+    
   </script>
+@endif
+@if(session('search_error'))
+<script>
+  swal("{{session('search_error')}}");
+  
+</script>
 @endif
   {{-- @if(session('home'))
     <script>

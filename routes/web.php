@@ -36,6 +36,9 @@ Auth::routes();
 Route::get('/home', [FrontController::class,'index'])->name('home');
 Route::post('/add-to-cart',[CartController::class,'addproducts']);
 
+Route::get('/product-list',[FrontController::class,'search_product']);
+Route::post('/searchproduct',[FrontController::class,'product_page']);
+
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/cart',[CartController::class,'viewcart']);

@@ -1,11 +1,20 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #232222 ">
-  
+  <a class="navbar-brand" href="{{url('/')}}" style="padding-left: 10px">WO:SA</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav" >
+      <div class="search" style="float: right">
+        <form action="{{url('searchproduct')}}" method="POST">
+          @csrf
+      <div class="input-group">
+        <input type="search" name="search" required class="form-control" id="search_product" placeholder="Search Product" aria-label="Search" aria-describedby="basic-addon1">
+        <button type="submit" class="btn btn-dark"><i class="fa fa-search"></i></button>
+        </div>
+      </form>
       
-      <ul class="navbar-nav me-auto ">
+      </div>
+      <ul class="navbar-nav me-auto " style="margin-left:auto">
         <li class="nav-item {{Request::is('/')?'active':''}}" style="padding-left: 6px">
           <a class="nav-link" href="{{url('/')}}"><i class="fa fa-home"></i>&nbsp;&nbsp;Home<span class="sr-only">(current)</span></a>
         </li>
@@ -30,7 +39,7 @@
 
          
           @else
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #998D33;text-decoration:none;padding-left:12px;"><i class="fa fa-user"></i>&nbsp;&nbsp;{{Auth::user()->name}}
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #998D33;text-decoration:none;padding-left:12px;"><i class="fa fa-user"></i>&nbsp;&nbsp;{{Auth::user()->name}} {{Auth::user()->lname}}
           <span class="caret"></span></a>
           <ul class="dropdown-menu" style="width:10px">
             <li><a class="dropdown-item" href="{{url('my-orders')}}">My Orders           
@@ -51,9 +60,9 @@
           </ul>
           @endguest
         </li>
-     
-        </div>
       </ul>
+        </div>
+      
    
-    </div>
+   
   </nav>

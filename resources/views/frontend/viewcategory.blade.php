@@ -3,7 +3,7 @@
  {{$category->name}}  
 @endsection
 @section('content')
-<br><br><br>
+<br><br><br><br>
 
 <div class="py-3 mb-4 shadow-sm bg-warning border-top">
   <div class="container">

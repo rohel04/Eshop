@@ -57,4 +57,35 @@ class FrontController extends Controller
             
         
     }
+    public function search_product()
+    {
+        $products=Product::select('name')->where('status','1')->get();
+        $data=[];
+        foreach($products as $item)
+        {
+            $data[]=$item['name'];
+        }
+        return $data;
+    }
+    public function product_page(Request $request)
+    {
+        $prod_name=$request->input('search');
+        if($prod_name!=null)
+        {
+            // $product=Product::where("name",$prod_name)->first();
+        $product=Product::where("name","LIKE","%$prod_name%")->first();
+        if($product)
+        {
+            return redirect('category/'.$product->category->slug.'/'.$product->slug);
+        }
+        else
+        {
+            return redirect()->back()->with('search_error',"No such product found");
+        }
+    }
+    else
+    {
+        return redirect()->back();
+    }
+    }
 }

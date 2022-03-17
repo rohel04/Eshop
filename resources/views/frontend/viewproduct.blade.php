@@ -3,7 +3,7 @@
    
 
 @section('content')
-
+<br><br><br>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -40,7 +40,7 @@
       </div>
     </div>
   </div>
-<br><br><br>
+
 <div class="py-3 mb-4 shadow-sm bg-warning border-top" >
     <div class="container">
         <h6  style="font-size: 14px" class="mb-0"><a style="text-decoration: none;color:black" href="{{url('categories_front')}}">Collections</a> &nbsp;> &nbsp;<a style="text-decoration: none;color:black" href="{{url('view-category/'.$products->category->slug)}}">{{$products->category->name}}</a> &nbsp;> &nbsp; {{$products->name}}</h6>

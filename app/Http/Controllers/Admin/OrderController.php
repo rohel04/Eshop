@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders=Order::where('status','0')->get();
+        $orders=Order::where('status','0')->orderBy('id','DESC')->get();
         return view('admin.orders.index',compact('orders'));
     }
     public function view($id)
@@ -27,7 +27,7 @@ class OrderController extends Controller
     }
     public function history()
     {
-        $orders=Order::where('status','1')->get();
+        $orders=Order::where('status','1')->orderBy('id','DESC')->get();
         return view('admin.orders.history',compact('orders'));
     }
 }

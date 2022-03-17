@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $orders=Order::where('user_id',Auth::id())->get();
+        $orders=Order::where('user_id',Auth::id())->orderBy('id','DESC')->get();
         return view('frontend.orders.index',compact('orders'));
     }
     public function view($id)
