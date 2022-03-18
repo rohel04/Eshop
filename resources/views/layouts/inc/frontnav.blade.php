@@ -14,7 +14,7 @@
       </form>
       
       </div>
-      <ul class="navbar-nav me-auto " style="margin-left:auto">
+      <ul class="navbar-nav ms-auto " style="margin-left:auto">
         <li class="nav-item {{Request::is('/')?'active':''}}" style="padding-left: 6px">
           <a class="nav-link" href="{{url('/')}}"><i class="fa fa-home"></i>&nbsp;&nbsp;Home<span class="sr-only">(current)</span></a>
         </li>
