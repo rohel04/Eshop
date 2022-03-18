@@ -70,7 +70,7 @@
                         @for($j=$value+1;$j<=5;$j++)
                         <i class="fa fa-star"></i>
                         @endfor
-                        {{$ratings->count()}} Ratings
+                        <label style="font-weight: bold;color:#64756B">{{$ratings->count()}} Ratings</label>
                     </div>
                     <p class="mt-5">
                         {{ $products->small_description }}
@@ -101,26 +101,65 @@
                     </div>
                   
                 </div>
-            </div>
+            
             <div class="col-md-12">
             <hr>
             <h3 style="font-family:fantasy">Product Description</h3>
             <p class="mt-3">{{$products->description}}</p>
             
-            
+        </div>
             </div>
+
             <hr>
-            <div class="col-md-12">
+            <div class="row">
+            <div class="col-md-4 border-right">
                 @if(Auth::check())
                 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color: #D05C5C">
                     Rate this product
                   </button>
+                  <a href="{{url('/add-review/'.$products->slug.'/userreview')}}" class="btn btn-link" style="color: #D05C5C">Review this product</a>
                   @else
-                  <h6 style="color: #D05C5C">* Login to rate this product</h6>
+                  <h6 style="color: #D05C5C">* Login to rate and review this product</h6>
+                  
                   @endif
+                  
+            </div>
+            <div class="col-md-8">
+                <h5 style="font-family: fantasy">Reviews of the product:</h5>
+                <br>
+                @foreach ($review as $item)
+                    
+             <div class="user-review">
+                  <label>{{$item->user->name}}&nbsp;{{$item->user->lname}}</label>
+                 <br>
+                 @php
+                 $rating=App\Models\Rating::where('prod_id',$item->prod_id)->where('user_id',$item->user_id)->first();
+                 
+                 @endphp
+                  @if($rating)
+                  @php $userrated=$rating->stars_rated @endphp
+                  @for($i=1;$i<=$userrated;$i++ )
+                        <i class="fa fa-star checked"></i>
+                        @endfor
+                        @for($j=$userrated+1;$j<=5;$j++)
+                        <i class="fa fa-star"></i>
+                        @endfor
+                  @endif
+                  <small>{{$item->created_at->format('d M Y')}}</small>
+                  <p>
+                     {{$item->user_review}}
+                  </p>
+                  @if($item->user_id == Auth::id())
+                  <a href="">edit</a>
+                  @endif
+                  @endforeach
+                </div>
+            </div>
             </div>
         </div>
-    </div>
+        
+
+   
     <br><br>
     <a style="text-decoration: none;color:black" href="{{url('view-category/'.$products->category->slug)}}"> <h3 style="font-family:fantasy">More {{$products->category->name}} products</h3></a>
     <hr style="border:1px solid #4D4D4D">

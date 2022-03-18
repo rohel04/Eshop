@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\frontend\RatingController;
+use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\frontend\WishListController;
 
@@ -61,6 +62,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('wishlist',[WishListController::class,'index']);
 
     Route::post('add-rating',[RatingController::class,'add']);
+    Route::get('add-review/{product_slug}/userreview',[ReviewController::class,'add']);
+    Route::post('add-review',[ReviewController::class,'review']);
 
     
 
