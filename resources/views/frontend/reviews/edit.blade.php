@@ -16,7 +16,7 @@
                             @csrf
                             @method('PUT')
                             <input type="hidden" value="{{$review->id}}" name="review_id">
-                            <textarea class="form-control" rows="5" name="user_review"> {{$review->user_review}}</textarea><br>
+                            <textarea class="form-control" required rows="5" name="user_review"> {{$review->user_review}}</textarea><br>
                             <button type="submit" class="btn btn-warning mt-3">Save Change</button>
                         </form>
                         

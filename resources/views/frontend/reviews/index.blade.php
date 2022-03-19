@@ -9,12 +9,13 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
+                   
                     @if($verified_purchase->count()>0)
                     <h3>You are writing review for {{$product->name}}</h3>
                         <form action="{{url('/add-review')}}" method="POST">
                             @csrf
                             <input type="hidden" value="{{$product->id}}" name="product_id">
-                            <textarea class="form-control" rows="5" name="user_review" placeholder="Write Review"></textarea><br>
+                            <textarea class="form-control" rows="5" required name="user_review" placeholder="Write Review"></textarea><br>
                             <button type="submit" class="btn btn-warning mt-3">Review</button>
                         </form>
                         

@@ -8,6 +8,8 @@ use App\Models\Category;
 use App\Models\Rating;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class FrontController extends Controller
 {
@@ -42,6 +44,7 @@ class FrontController extends Controller
             $products=Product::where('slug',$prod_slug)->first();
             $ratings=Rating::where('prod_id',$products->id)->get();
             $review=Review::where('prod_id',$products->id)->get();
+            $review_check=Review::where('user_id',Auth::id())->where('prod_id',$products->id)->first();
             $ratings_sum=Rating::where('prod_id',$products->id)->sum('stars_rated');
             if($ratings->count()> 0)
             {
@@ -55,7 +58,7 @@ class FrontController extends Controller
             
             $cate_id=$products->cate_id;
             $rel_products=Product::where('cate_id',$cate_id)->take(4)->get();
-            return view('frontend.viewproduct',compact('products','rel_products','ratings','ratings_value','review'));
+            return view('frontend.viewproduct',compact('products','rel_products','ratings','ratings_value','review','review_check'));
             
         
     }

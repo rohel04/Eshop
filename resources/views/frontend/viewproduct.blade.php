@@ -3,6 +3,7 @@
    
 
 @section('content')
+
 <br><br><br>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -117,7 +118,11 @@
                 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color: #D05C5C">
                     Rate this product
                   </button>
+                    @if($review_check!=null)
+
+                    @else
                   <a href="{{url('/add-review/'.$products->slug.'/userreview')}}" class="btn btn-link" style="color: #D05C5C">Review this product</a>
+                    @endif
                   @else
                   <h6 style="color: #D05C5C">* Login to rate and review this product</h6>
                   
@@ -126,10 +131,10 @@
             </div>
             <div class="col-md-8">
                 <h5 style="font-family: fantasy">Reviews of the product:</h5>
-                <br>
+                
                 @foreach ($review as $item)
                     
-             <div class="user-review">
+             <div class="user-review" style="padding-top: 20px">
                   <label style="font-weight: bold">{{$item->user->name}}&nbsp;{{$item->user->lname}}</label>
                  <br>
                  @php
@@ -146,11 +151,13 @@
                         @endfor
                   @endif
                   <small>{{$item->created_at->format('d M Y')}}</small>
-                  <p>
+                  <br>
+                  
+                  
                      {{$item->user_review}}
-                  </p>
+                  &nbsp;&nbsp;
                   @if($item->user_id == Auth::id())
-                  <a href="{{url('edit-review/'.$products->slug.'/userreview')}}">edit</a>
+                  <a href="{{url('edit-review/'.$products->slug.'/userreview')}}">edit</a><br>
                   @endif
                   @endforeach
                 </div>
@@ -158,7 +165,7 @@
             </div>
         </div>
         
-
+    
    
     <br><br>
     <a style="text-decoration: none;color:black" href="{{url('view-category/'.$products->category->slug)}}"> <h3 style="font-family:fantasy">More {{$products->category->name}} products</h3></a>
@@ -184,6 +191,7 @@
       @endif
       @endforeach
     </div>
+</div>
 </div>
 <br><br>
 @endsection

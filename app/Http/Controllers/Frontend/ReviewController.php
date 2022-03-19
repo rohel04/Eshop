@@ -14,6 +14,7 @@ class ReviewController extends Controller
 {
     public function add($product_slug)
     {
+        
         $product=Product::where('status','1')->where('slug',$product_slug)->first();
         if($product)
         {
