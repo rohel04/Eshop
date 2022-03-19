@@ -50,4 +50,31 @@ class ReviewController extends Controller
             return redirect()->back()->with('status',"Link is broken");
         }
     }
+    public function edit($product_slug)
+    {
+        $product=Product::where('slug',$product_slug)->first();
+        if($product)
+        {
+            $review=Review::where('user_id',Auth::id())->where('prod_id',$product->id)->first();
+            return view('frontend.reviews.edit',compact('review','product'));
+        }
+        else
+        {
+
+        }
+    }
+    public function update(Request $request)
+    {
+        $review_id=$request->input('review_id');
+        $review=Review::where('id',$review_id)->first();
+        $product=Product::where('id',$review->prod_id)->first();
+        $categoryslug=$product->category->slug;
+        $productslug=$product->slug;
+
+        $user_review=$request->input('user_review');
+        $review->user_review=$user_review;
+        $review->update();
+
+        return redirect('category/'.$categoryslug.'/'.$productslug)->with('status','Review updated successfully!');
+    }
 }
