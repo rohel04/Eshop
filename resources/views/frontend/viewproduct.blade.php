@@ -130,7 +130,7 @@
                 @foreach ($review as $item)
                     
              <div class="user-review">
-                  <label>{{$item->user->name}}&nbsp;{{$item->user->lname}}</label>
+                  <label style="font-weight: bold">{{$item->user->name}}&nbsp;{{$item->user->lname}}</label>
                  <br>
                  @php
                  $rating=App\Models\Rating::where('prod_id',$item->prod_id)->where('user_id',$item->user_id)->first();
@@ -150,7 +150,7 @@
                      {{$item->user_review}}
                   </p>
                   @if($item->user_id == Auth::id())
-                  <a href="">edit</a>
+                  <a href="{{url('edit-review/'.$products->slug.'/userreview')}}">edit</a>
                   @endif
                   @endforeach
                 </div>

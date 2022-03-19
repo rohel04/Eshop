@@ -64,6 +64,8 @@ Route::middleware(['auth'])->group(function(){
     Route::post('add-rating',[RatingController::class,'add']);
     Route::get('add-review/{product_slug}/userreview',[ReviewController::class,'add']);
     Route::post('add-review',[ReviewController::class,'review']);
+    Route::get('edit-review/{product_slug}/userreview',[ReviewController::class,'edit']);
+    Route::put('update-review',[ReviewController::class,'update']);
 
     
 
