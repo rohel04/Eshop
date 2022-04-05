@@ -31,7 +31,7 @@
           <div class="col-md-3 mt-3">
             <a href="{{url('category/'.$item->category->slug.'/'.$item->slug)}}" style="text-decoration: none;color:black">
             <div class="card"  style="box-shadow: 1px 1px 1px 1px #D8D8D8;">
-              <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="product image" height="290" >
+              <img src="{{asset('assets/uploads/products/'.$item->image)}}" alt="product image" height="290" class="card-image" >
               <div class="card-body">
                 <h6>{{$item->name}}</h6>
                 <small style="font-weight: bold">Rs. {{$item->selling_price}}</small>&nbsp;&nbsp;

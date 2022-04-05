@@ -28,6 +28,8 @@
   <link href="{{asset('frontend/css/owl.carousel.min.css')}}" rel="stylesheet" />
   
   <link href="{{asset('frontend/css/owl.theme.default.min.css')}}" rel="stylesheet" />
+  {{-- <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script> --}}
+
 
 
 </head>
@@ -50,6 +52,8 @@
     <script src="{{asset('frontend/js/jquery-3.6.0.min.js')}}"></script> 
     <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}"></script> 
     <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script> 
+    <script src="{{asset('frontend/js/sweetalert2.all.min.js')}}"></script> 
+
   {{-- <script src="{{asset('frontend/js/slim.min.js')}}"></script>  --}}
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> --}}

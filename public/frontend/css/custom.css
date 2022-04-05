@@ -46,6 +46,21 @@ footer a:hover{
 .card img{
   object-fit:cover;
 }
+.card-image{
+  inset:0;
+  transition: transform .75s;
+}
+.card:hover .card-image{
+  transform: scale(1.15);
+}
+.prod_img{
+  inset:0;
+  transition: transform .75s;
+}
+.prod_img:hover{
+  transform: scale(1.05);
+
+}
 .card s{
   float: right;
 }

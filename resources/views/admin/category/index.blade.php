@@ -32,7 +32,7 @@
                     </td>
                     <td>
                         <a href="{{url('edit-category/'.$item->id)}}" class="btn btn-info btn-sm">Edit</a>
-                        <a href="{{url('delete-category/'.$item->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="{{url('delete-category/'.$item->id)}}"  class="btn btn-danger btn-sm">Delete</a>
                     </td>
                 </tr>
                 @endforeach
