@@ -10,6 +10,9 @@
   <title>
    @yield('title')
   </title>
+  <link rel = "icon" href = 
+"{{asset('assets/images/icon.png')}}"
+        type = "image/x-icon">
   <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">  <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" /> 
   <!-- Font Awesome Icons -->

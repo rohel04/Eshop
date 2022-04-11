@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    Porducts
+    Products
 @endsection
 @section('content')
 <div class="card">

@@ -5,7 +5,7 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <br>
-    <div class="carousel-inner" >
+    <div class="carousel-inner" style="position:relative">
       <div class="carousel-item active">
         <img class="d-block w-100" src="{{asset('assets/images/all.jpeg')}}" alt="First slide"  style="height: 510px;" >
       </div>
