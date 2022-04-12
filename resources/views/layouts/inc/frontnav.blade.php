@@ -32,9 +32,13 @@
         <li class="dropdown" style="margin: auto;">
           @guest
           @if (Route::has('login'))
+          <li class="nav-item" style="padding-left: 8px">
+            <a class="nav-link" href="{{ route('register') }}" data-toggle="modal" data-target="#register"> <i class="fa fa-sign-in"></i>&nbsp;{{ __('Sign Up') }}</a>
+          </li>
               <li class="nav-item" style="padding-left: 8px">
-                  <a  class="nav-link" href="{{ route('login') }}" data-toggle="modal" data-target="#exampleModalCenter"> <i class="fa fa-sign-in"></i>&nbsp; {{ __('Sign in') }}</a>
+                  <a  class="nav-link" href="{{ route('login') }}" data-toggle="modal" data-target="#exampleModalCenter"> <i class="fa fa-sign-in"></i>&nbsp;{{ __('Login') }}</a>
               </li>
+             
           @endif
 
          
