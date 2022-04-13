@@ -48,7 +48,8 @@
             <h6 style="font-size: 14px" class="mb-0"><a style="text-decoration: none;color:black"
                     href="{{ url('categories_front') }}">Collections</a> &nbsp;> &nbsp;<a
                     style="text-decoration: none;color:black"
-                    href="{{ url('view-category/' . $products->category->slug) }}">{{ $products->category->name }}</a> &nbsp;>
+                    href="{{ url('view-category/' . $products->category->slug) }}">{{ $products->category->name }}</a>
+                &nbsp;>
                 &nbsp; {{ $products->name }}</h6>
         </div>
     </div>
@@ -151,7 +152,8 @@
 
                     @foreach ($review as $item)
                         <div class="user-review" style="padding-top: 20px">
-                            <label style="font-weight: bold">{{ $item->user->name }}&nbsp;{{ $item->user->lname }}</label>
+                            <label
+                                style="font-weight: bold">{{ $item->user->name }}&nbsp;{{ $item->user->lname }}</label>
                             <br>
                             @php
                                 $rating = App\Models\Rating::where('prod_id', $item->prod_id)
@@ -181,18 +183,21 @@
                 </div>
             </div>
         </div>
-        </div>
+        
+        
 
 
+    <br><br>
+    
+        <div class="rel" style="margin:10px">
 
-        <br><br>
-        <a style="text-decoration: none;color:black" href="{{ url('view-category/' . $products->category->slug) }}">
-            <h3 style="font-family:fantasy">More {{ $products->category->name }} products</h3>
-        </a>
-        <hr style="border:1px solid #4D4D4D">
-        <br>
-        <div class="row">
-
+            <a style="text-decoration: none;color:black" href="{{ url('view-category/' . $products->category->slug) }}">
+                <h3 style="font-family:fantasy">More {{ $products->category->name }} products</h3>
+            </a>
+            <hr style="border:1px solid #4D4D4D">
+            <br>
+            <div class="row" style="margin:9px">
+                
             @foreach ($rel_products as $item)
                 @if ($item->name == $products->name)
                 @else
@@ -210,11 +215,15 @@
                             </div>
                         </a>
                     </div>
-                @endif
-            @endforeach
+                    @endif
+                    @endforeach
+                </div>
+            </div>
+            <br>
         </div>
-    </div>
-   
+</div>
+    
+
     <br><br>
 @endsection
 @section('scripts')

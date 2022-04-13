@@ -18,13 +18,13 @@
 
 
 
-    
+
 
     <div class="py-5">
       <div class="container">
         <h3 style="font-family:fantasy">Featured Products</h3>
         <hr style="border:1px solid  #585858">
-        <br>
+        
         <div class="row">
                     
           @foreach ($featured_products as $item)                      
@@ -43,6 +43,7 @@
           </div>
           @endforeach
         </div>
+        
         <br><br>
         <h3 style="font-family:fantasy">Popular Categories</h3>
         <hr style="border:1px solid #4D4D4D">

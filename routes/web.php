@@ -67,6 +67,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('edit-review/{product_slug}/userreview',[ReviewController::class,'edit']);
     Route::put('update-review',[ReviewController::class,'update']);
 
+    Route::get('recommendation',[FrontController::class,'recommendation']);
     
 
 

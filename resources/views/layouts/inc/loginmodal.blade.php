@@ -1,9 +1,9 @@
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
-    <div class="modal-dialog modal-dialog-centered" role="document" style="width: 420px" >
+    <div class="modal-dialog modal-dialog-centered" role="document" style="width: 400px" >
       <div class="modal-content" >
         <div class="modal-header">
           {{-- <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5> --}}
-          <img src="{{asset('assets/images/user_logo.png')}}" alt="user_logo" width="60" height="60" style="margin-right:45%;margin-left:45%">
+          <img src="{{asset('assets/images/user_logo.png')}}" alt="user_logo" width="60" height="60" style="margin-right:45%;margin-left:44%">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -60,7 +60,7 @@
 
             <div class="row mb-0">
                 <div class="col-md-12">
-                   <button type="submit" class="btn btn-dark w-100">
+                   <button type="submit" class="btn btn-outline-dark w-100">
                         {{ __('Sign in') }}
                     </button>
                     

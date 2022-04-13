@@ -14,4 +14,8 @@ class Rating extends Model
         'prod_id',
         'stars_rated',
     ];
+    public function product()
+    {
+        return $this->belongsTo(Product::class,'prod_id','id');
+    }
 }

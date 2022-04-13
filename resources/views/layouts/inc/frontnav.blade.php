@@ -21,7 +21,7 @@
         <li class="nav-item {{Request::is('categories_front')?'active':''}}" style="padding-left: 8px">
           <a class="nav-link" href="{{url('/categories_front')}}"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;Categories</a>
         </li>
-        <li class="nav-item {{Request::is('cart')?'active':''}}"" style="padding-left: 8px">
+        <li class="nav-item {{Request::is('cart')?'active':''}}" style="padding-left: 8px">
           <a class="nav-link" href="{{url('/cart')}}"><i class="fa fa-shopping-cart"></i>&nbsp;Cart&nbsp;
           <span class="badge badge-danger cartcount" style="font-size:14px">0</span>
           </a>
@@ -49,6 +49,11 @@
             <li><a class="dropdown-item" href="{{url('my-orders')}}">My Orders           
             </a>
            </li>
+           <div class="rec">
+            <li><a class="dropdown-item" href="{{url('recommendation')}}" style="color: aliceblue">For You !!           
+            </a>
+            </li>
+           </div>
             <li><a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">

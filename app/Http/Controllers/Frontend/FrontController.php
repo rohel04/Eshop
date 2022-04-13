@@ -93,4 +93,44 @@ class FrontController extends Controller
         return redirect()->back();
     }
     }
+
+    public function recommendation()
+    {
+        $p=[];
+        $recommen=[];
+        $rating=Rating::where('user_id',Auth::id())->where('stars_rated',5)->first();
+        $test=Rating::where('prod_id',$rating->prod_id)->where('stars_rated',5)->get('user_id');
+       
+        foreach($test as $t){
+            if(!($t->user_id == Auth::id()))
+            {
+                array_push($p,$t->user_id);
+            }
+        }
+        foreach($p as $user)
+        {
+            $rating=Rating::where('user_id',$user)->where('stars_rated',5)->get('prod_id');
+            foreach($rating as $r)
+            {
+                array_push($recommen,$r);
+            }
+        }
+        $a=array_unique($recommen);
+        // $count=0;
+        // foreach($rating as $r)
+        // {
+        //     if($count>=3)
+        //     {
+        //         break;
+        //     }
+        //     else
+        //     {
+        //     array_push($p,$r->prod_id);
+        //     $count++;
+        //     }
+        // }
+       
+       
+        return view('frontend.recommend',compact('a'));
+    }
 }
