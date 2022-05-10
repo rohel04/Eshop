@@ -12,11 +12,17 @@
   <div class="py-5">
 
     <div class="container">
-      <h3 style="font-family:fantasy">{{$category->name}}</h3>
+      <h3 style="font-family:fantasy">{{$category->name}} 
+      </h3>
       <hr style="border:1px solid #4D4D4D">
       <br>
       <div class="row">
-                  
+        <div class="col-12 mb-4">
+          <span class="sort-heading">Sort by:</span>
+          <a class="sort-font" href="{{URL::current()}}">All</a>
+          <a class="sort-font" href="{{URL::current().'?sort=price_asc'}}" class="sort-font">Low to High</a>
+          <a class="sort-font" href="{{URL::current().'?sort=price_desc'}}" class="sort-font">High to Low</a>
+        </div>
         @foreach ($products as $item)                      
         <div class="col-md-3">
           <a href="{{url('category/'.$category->slug.'/'.$item->slug)}}" style="text-decoration: none;color:black">

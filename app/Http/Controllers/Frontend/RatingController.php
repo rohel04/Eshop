@@ -23,7 +23,7 @@ class RatingController extends Controller
             ->join('order_items','orders.id','order_items.order_id')
             ->where('order_items.prod_id',$product_id)->get();
 
-            if($verified_purchase)
+            if($verified_purchase->count()>0)
             {
                 $existing_rating=Rating::where('user_id',Auth::id())->where('prod_id',$product_id)->first();
                 if($existing_rating)
@@ -41,7 +41,7 @@ class RatingController extends Controller
                 return redirect()->back()->with('status',"Thank you for rating the product");
             }
             else{
-                return redirect()->back()->with('status',"You cannot rate without purchased");
+                return redirect()->back()->with('status',"You cannot rate without purchase");
             }
         }
         else

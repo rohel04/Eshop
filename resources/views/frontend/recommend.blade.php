@@ -3,10 +3,12 @@
     Recommendation
 @endsection
 @section('content')
-    <br>
+    <br><br>
   
 
     <div class="container mt-5">
+      <h3 style="font-family: fantasy">Recommended For You</h3>
+      <hr  style="border:1px solid #585858;">
         <div class="row">
            @empty($a)
                 <div class="nothing" style="margin:auto;height:300px;margin-top:50px">

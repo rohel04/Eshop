@@ -115,3 +115,23 @@ footer a:hover{
     background-position: 0 50%;
   }
 }
+.you{
+  color: #fff;
+  font-size:16px;
+}
+.you:hover{
+  color:#fd1d2d;
+}
+.sort-font{
+  color: #000;
+  text-decoration: none;
+  margin: 5px;
+  font-size: 14px;
+}
+.sort-font:hover{
+  color:#7C7C7C;
+  text-decoration: none;
+}
+.sort-heading{
+  font-weight: bold;
+}

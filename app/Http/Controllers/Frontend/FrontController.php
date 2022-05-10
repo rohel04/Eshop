@@ -7,7 +7,9 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Rating;
 use App\Models\Review;
+use Request as R;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -31,6 +33,19 @@ class FrontController extends Controller
         {
         $category=Category::where('slug',$slug)->first();
         $products=Product::where('cate_id',$category->id)->where('status','1')->get();
+
+        if(R::get('sort')=='price_asc')
+            
+        {               
+            $products=Product::where('cate_id',$category->id)->orderBy('original_price','ASC')->get();
+            
+        
+        }
+        elseif(R::get('sort')=='price_desc')
+        {
+            $products=Product::where('cate_id',$category->id)->orderBy('original_price','DESC')->get();
+
+        }
         return view('frontend.viewcategory',compact('products','category'));
         }
         else
@@ -98,39 +113,51 @@ class FrontController extends Controller
     {
         $p=[];
         $recommen=[];
-        $rating=Rating::where('user_id',Auth::id())->where('stars_rated',5)->first();
-        $test=Rating::where('prod_id',$rating->prod_id)->where('stars_rated',5)->get('user_id');
-       
-        foreach($test as $t){
-            if(!($t->user_id == Auth::id()))
-            {
-                array_push($p,$t->user_id);
+        $rating=Rating::where('user_id',Auth::id())->whereIn('stars_rated',[4,5])->first();
+        if($rating){
+
+            $test=Rating::where('prod_id',$rating->prod_id)->where('stars_rated',5)->get('user_id');
+            
+            foreach($test as $t){
+                if(!($t->user_id == Auth::id()))
+                {
+                    array_push($p,$t->user_id);
+                }
             }
+            $r=[];
+            
+            foreach($p as $t)
+            {
+                $s=Rating::where('user_id',$p)->sum('stars_rated');
+                $total=Rating::where('user_id',$t)->count();
+                $avg=round($s/$total);
+                array_push($r,$avg);
+
+            }
+            if(count($r)>0)
+            {
+                $max_rating=max($r);
+            }
+            else{
+                $max_rating=0;
+            }
+                
+           
+            foreach($p as $user)
+            {
+                $rating=Rating::where('user_id',$user)->where('stars_rated',$max_rating)->get('prod_id');
+                foreach($rating as $r)
+                {
+                    array_push($recommen,$r);
+                }
+            }
+            $a=array_unique($recommen);  
         }
-        foreach($p as $user)
+        else
         {
-            $rating=Rating::where('user_id',$user)->where('stars_rated',5)->get('prod_id');
-            foreach($rating as $r)
-            {
-                array_push($recommen,$r);
-            }
+            $a=0;
         }
-        $a=array_unique($recommen);
-        // $count=0;
-        // foreach($rating as $r)
-        // {
-        //     if($count>=3)
-        //     {
-        //         break;
-        //     }
-        //     else
-        //     {
-        //     array_push($p,$r->prod_id);
-        //     $count++;
-        //     }
-        // }
-       
-       
+           
         return view('frontend.recommend',compact('a'));
     }
 }

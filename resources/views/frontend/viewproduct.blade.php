@@ -130,7 +130,7 @@
 
             <hr>
             <div class="row">
-                <div class="col-md-4 border-right">
+                <div class="col-md-4 border-left">
                     @if (Auth::check())
                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal"
                             style="color: #D05C5C">
@@ -143,17 +143,18 @@
                         @endif
                     @else
                         <h6 style="color: #D05C5C">* Login to rate and review this product</h6>
-
+    
                     @endif
-
+    
                 </div>
-                <div class="col-md-8 mb-5">
-                    <h5 style="font-family: fantasy">Reviews of the product:</h5>
+                <div class="col-md-8">
+                    <h6>Product Reviews:</h6>
 
                     @foreach ($review as $item)
                         <div class="user-review" style="padding-top: 20px">
-                            <label
-                                style="font-weight: bold">{{ $item->user->name }}&nbsp;{{ $item->user->lname }}</label>
+                            <label style="color: #707171;font-size:14px"
+                                >by&nbsp;{{ $item->user->name }}&nbsp;{{ $item->user->lname }}</label>&nbsp;&nbsp;
+                                <i class='fas fa-check-circle' style='color:#429da9'></i><span style="font-size: 14px;color:#429da9"> Verified Purchase</span>
                             <br>
                             @php
                                 $rating = App\Models\Rating::where('prod_id', $item->prod_id)
@@ -167,7 +168,7 @@
                                     <i class="fa fa-star checked"></i>
                                 @endfor
                                 @for ($j = $userrated + 1; $j <= 5; $j++)
-                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star" style="color:707171"></i>
                                 @endfor
                             @endif
                             <small>{{ $item->created_at->format('d M Y') }}</small>
@@ -182,6 +183,7 @@
                     @endforeach
                 </div>
             </div>
+            
         </div>
         
         
