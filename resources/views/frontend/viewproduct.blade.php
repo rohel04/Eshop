@@ -147,11 +147,11 @@
                     @endif
     
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 mb-3">
                     <h6>Product Reviews:</h6>
 
                     @foreach ($review as $item)
-                        <div class="user-review" style="padding-top: 20px">
+                        <div class="user-review" style="padding: 20px">
                             <label style="color: #707171;font-size:14px"
                                 >by&nbsp;{{ $item->user->name }}&nbsp;{{ $item->user->lname }}</label>&nbsp;&nbsp;
                                 <i class='fas fa-check-circle' style='color:#429da9'></i><span style="font-size: 14px;color:#429da9"> Verified Purchase</span>
@@ -178,8 +178,9 @@
                             <span style="font-size:14px">{{ $item->user_review }}</span>
                             &nbsp;&nbsp;
                             @if ($item->user_id == Auth::id())
-                                <a href="{{ url('edit-review/' . $products->slug . '/userreview') }}">edit</a><br>
+                                <a href="{{ url('edit-review/' . $products->slug . '/userreview') }}">Edit</a><br>
                             @endif
+                        </div>
                     @endforeach
                 </div>
             </div>

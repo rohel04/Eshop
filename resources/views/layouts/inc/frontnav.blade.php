@@ -46,8 +46,8 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #998D33;text-decoration:none;padding-left:12px;"><i class="fa fa-user"></i>&nbsp;&nbsp;{{Auth::user()->name}} {{Auth::user()->lname}}
           <span class="caret"></span></a>
           <ul class="dropdown-menu" style="width:10px">
-            <div class="rec">
-             <li><a class="dropdown-item you" href="{{url('recommendation')}}" >For You !!           
+            <div class="rec" style="margin: 5px">
+             <li><a class="dropdown-item you" href="{{url('recommendation')}}" >Explore!!          
              </a>
              </li>
             </div>
